@@ -3,91 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Praline Coffee House</title>
-<meta name="description" content="Praline Coffee House — café de especialidad en Baños de Agua Santa. Carta, redes y reservas.">
-<meta name="theme-color" content="#16130F" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#E7E8E0" media="(prefers-color-scheme: light)">
-<meta property="og:title" content="Praline Coffee House">
-<meta property="og:description" content="Café de especialidad en Baños de Agua Santa, Ecuador.">
+<title>PRALINÉ coffee house</title>
+<meta name="description" content="PRALINÉ coffee house — repostería artesanal y café de especialidad. Carta, redes y reservas.">
+<meta name="theme-color" content="#EFE3D6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2A1A14" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="PRALINÉ coffee house">
+<meta property="og:description" content="Repostería artesanal y café de especialidad.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Archivo:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Julius+Sans+One&family=Jost:wght@300;400;500;600&display=swap">
 <style>
-/* ============================================================
-   PRALINE COFFEE HOUSE — "Basalt & Praline"
-   Design tokens. Dark-first: the café is a night place and the
-   card gets tapped over candlelight more than over sunlight.
-   ============================================================ */
+/* ==================================================================
+   PRALINÉ coffee house
+   Palette and type taken from the Manual de Identidad Corporativa.
+   The manual's three greens (#A9B5A2 #A8A898 #565243) are retired at
+   the owner's direction; green now survives only as the semantic
+   open/closed status dot, never as a brand colour.
+   ================================================================== */
 :root{
-  /* light = pale mineral stone (thermal rock), NOT paper cream */
-  --ground:#E7E8E0;
-  --raised:#F1F1EA;
-  --sunk:#DCDDD3;
-  --ink:#16130F;
-  --ink-soft:#5C564C;
-  --line:rgba(22,19,15,.14);
-  --amber:#A9682A;
-  --amber-ink:#FFF6EA;
-  --verde:#3F5A3C;
-  --glow:rgba(169,104,42,.10);
-  --r:2px;
-  --band:clamp(28px,7vw,44px);
+  /* light — the brand's own cream is the primary ground */
+  --ground:#EFE3D6;      /* brand warm cream                        */
+  --raised:#F7F0E7;      /* derived lift for cards                  */
+  --sand:#E9D8D2;        /* rose-tinted wash — replaces the manual's green #DCDCCA */
+  --ink:#5A3A2E;         /* brand chocolate — 7.9:1 on cream        */
+  --muted:#7A6154;       /* derived warm taupe — 4.6:1              */
+  --accent:#8A5754;      /* brand rose, darkened to 4.7:1 for text  */
+  --accent-soft:#A27572; /* brand rose as published — rules, fills  */
+  --line:rgba(90,58,46,.16);
+  --ok:#4F6B4A;          /* status only, never decoration           */
+  --r:3px;
+  --band:clamp(30px,7.5vw,46px);
   --pad:clamp(22px,6vw,34px);
   --maxw:34rem;
+  --serif:Prata,"Times New Roman",Georgia,serif;
+  --caps:"Julius Sans One","Optima",Candara,sans-serif;
+  --sans:Jost,"Century Gothic","Avenir Next",Avenir,sans-serif;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --ground:#16130F;
-    --raised:#201B16;
-    --sunk:#100E0B;
-    --ink:#EDE4D6;
-    --ink-soft:#9A8C78;
-    --line:rgba(217,154,78,.20);
-    --amber:#D99A4E;
-    --amber-ink:#16130F;
-    --verde:#7E9A76;
-    --glow:rgba(217,154,78,.16);
+    --ground:#2A1A14; --raised:#38241C; --sand:#4A2F2C;
+    --ink:#EFE3D6; --muted:#B49C8C;
+    --accent:#C9938F; --accent-soft:#A27572;
+    --line:rgba(239,227,214,.16); --ok:#8FAE87;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#16130F;
-  --raised:#201B16;
-  --sunk:#100E0B;
-  --ink:#EDE4D6;
-  --ink-soft:#9A8C78;
-  --line:rgba(217,154,78,.20);
-  --amber:#D99A4E;
-  --amber-ink:#16130F;
-  --verde:#7E9A76;
-  --glow:rgba(217,154,78,.16);
+  --ground:#2A1A14; --raised:#38241C; --sand:#4A2F2C;
+  --ink:#EFE3D6; --muted:#B49C8C;
+  --accent:#C9938F; --accent-soft:#A27572;
+  --line:rgba(239,227,214,.16); --ok:#8FAE87;
 }
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;
-  background:var(--ground);
-  color:var(--ink);
-  font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
-  font-size:16px;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.55;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 .wrap{max-width:var(--maxw);margin:0 auto;position:relative}
 
-/* one quiet atmospheric move: amber heat behind the hero */
-.wrap::before{
-  content:"";position:absolute;inset:-10% -30% auto;height:52vh;
-  background:radial-gradient(60% 60% at 50% 0%,var(--glow),transparent 70%);
-  pointer-events:none;z-index:0;
-}
-
-/* ---------- bands: full-bleed strata split by amber hairlines ---------- */
 .band{
-  position:relative;z-index:1;
-  padding:var(--band) var(--pad);
+  position:relative;padding:var(--band) var(--pad);
   border-bottom:1px solid var(--line);
   display:flex;flex-direction:column;gap:18px;
 }
@@ -95,97 +73,109 @@ section.band:last-of-type{border-bottom:0}
 
 /* ---------- type ---------- */
 .eyebrow{
-  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink-soft);margin:0;
+  font-family:var(--caps);font-size:12px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted);margin:0;
 }
 h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
-.wordmark{
-  font-family:Gloock,Georgia,serif;
-  font-size:clamp(3.6rem,19vw,5.6rem);
-  line-height:.86;letter-spacing:-.02em;
-}
-h2{font-family:Gloock,Georgia,serif;font-size:clamp(1.5rem,6vw,1.9rem);line-height:1.1}
-p{margin:0;color:var(--ink-soft)}
-.lede{color:var(--ink);font-size:1.02rem}
+h2{font-family:var(--serif);font-size:clamp(1.45rem,5.6vw,1.8rem);line-height:1.2}
+p{margin:0;color:var(--muted)}
 a{color:inherit}
 
-/* ---------- hero ---------- */
-.hero{padding-top:clamp(30px,9vw,54px);gap:0}
-.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
-.seal{width:42px;height:42px;display:block;color:var(--amber)}
-.rule{height:2px;background:var(--amber);width:100%;transform-origin:left;margin:18px 0 16px}
-.sub{
-  font-family:Gloock,Georgia,serif;font-size:clamp(1rem,4.6vw,1.2rem);
-  letter-spacing:.34em;text-transform:uppercase;color:var(--amber);
+/* ---------- hero: the logo lockup, centred like the manual ---------- */
+.hero{align-items:center;text-align:center;padding-top:clamp(34px,10vw,58px);gap:0}
+.topbar{display:flex;justify-content:flex-end;width:100%;margin-bottom:clamp(20px,6vw,34px)}
+.wordmark{
+  font-family:var(--serif);
+  font-size:clamp(2.9rem,15vw,4.3rem);
+  line-height:.95;letter-spacing:.015em;
 }
-.place{margin-top:14px;font-size:.85rem;letter-spacing:.04em}
+.lockup-sub{
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(1rem,4.4vw,1.25rem);letter-spacing:.02em;
+  color:var(--ink);margin-top:2px;
+}
+.rule{
+  height:1px;background:var(--accent-soft);width:min(190px,52%);
+  transform-origin:center;margin:22px 0 18px;
+}
+.place{font-family:var(--caps);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.craft{margin-top:12px;font-size:.94rem;max-width:26rem}
 
 /* ---------- controls ---------- */
 .btn{
   display:flex;align-items:center;justify-content:space-between;gap:14px;
-  width:100%;min-height:60px;padding:16px 20px;
-  border:2px solid var(--ink);border-radius:var(--r);
+  width:100%;min-height:62px;padding:16px 22px;
+  border:1px solid var(--ink);border-radius:var(--r);
   background:transparent;color:var(--ink);
-  font-family:Archivo,sans-serif;font-size:1.02rem;font-weight:600;
-  letter-spacing:.01em;text-decoration:none;cursor:pointer;
-  transition:background .16s ease,color .16s ease,transform .16s ease;
+  font-family:var(--sans);font-size:1.04rem;font-weight:500;
+  text-decoration:none;cursor:pointer;text-align:left;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
 }
-.btn .arw{font-size:1.1rem;opacity:.55;transition:transform .16s ease}
-.btn:hover{background:var(--ink);color:var(--ground)}
+.btn .arw{font-size:1.05rem;opacity:.5;transition:transform .18s ease,opacity .18s ease}
+.btn:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
 .btn:hover .arw{transform:translateX(4px);opacity:1}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
-.btn-primary:hover{background:var(--ink);border-color:var(--ink);color:var(--ground)}
-.btn-sub{display:block;font-weight:400;font-size:.78rem;opacity:.72;margin-top:2px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.btn-primary{background:var(--ink);color:var(--ground)}
+.btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:#fff}
+.btn-sub{
+  display:block;font-family:var(--caps);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;opacity:.78;margin-top:5px;font-weight:400;
+}
+:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px}
 
-/* ---------- social tiles ---------- */
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+/* ---------- social ---------- */
+.tiles{display:flex;flex-wrap:wrap;gap:10px}
 .tile{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  flex:1 1 0;min-width:96px;max-width:180px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   padding:18px 6px;border:1px solid var(--line);border-radius:var(--r);
   background:var(--raised);color:var(--ink);text-decoration:none;
-  font-size:.72rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
-  transition:border-color .16s ease,transform .16s ease;
+  font-family:var(--caps);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  transition:border-color .18s ease,transform .18s ease;
 }
-.tile:hover{border-color:var(--amber);transform:translateY(-2px)}
-.tile svg{width:23px;height:23px;color:var(--amber)}
+.tile:hover{border-color:var(--accent-soft);transform:translateY(-2px)}
+.tile svg{width:22px;height:22px;color:var(--accent)}
 
-/* ---------- review band ---------- */
+/* ---------- review ---------- */
 .review{background:var(--raised)}
-.stars{display:flex;gap:5px;color:var(--amber)}
-.stars svg{width:22px;height:22px}
+.stars{display:flex;gap:6px;color:var(--accent-soft)}
+.stars svg{width:20px;height:20px}
 
 /* ---------- info rows ---------- */
-.rows{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.rows{display:flex;flex-direction:column;border-top:1px solid var(--line)}
 .row{
-  display:flex;align-items:center;gap:16px;padding:15px 0;
-  border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;
-  background:none;border-left:0;border-right:0;border-top:0;
-  font-family:Archivo,sans-serif;font-size:1rem;text-align:left;width:100%;cursor:pointer;
+  display:flex;align-items:center;gap:16px;padding:16px 0;
+  border:0;border-bottom:1px solid var(--line);
+  background:none;color:var(--ink);text-decoration:none;
+  font-family:var(--sans);font-size:1rem;text-align:left;width:100%;cursor:pointer;
 }
-.row-ico{width:20px;height:20px;color:var(--amber);flex:none}
+.row-ico{width:19px;height:19px;color:var(--accent);flex:none}
 .row-body{flex:1;min-width:0}
-.row-k{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
-.row-v{display:block;font-weight:500}
-.row-v.mono{font-variant-numeric:tabular-nums;letter-spacing:.02em}
-.row-act{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);flex:none}
-.open-dot{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;color:var(--verde)}
-.open-dot::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.open-dot.shut{color:var(--ink-soft)}
+.row-k{
+  display:block;font-family:var(--caps);font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:3px;
+}
+.row-v{display:block;font-weight:400;line-height:1.4}
+.row-v.mono{font-variant-numeric:tabular-nums;letter-spacing:.03em;font-weight:500}
+.row-act{
+  font-family:var(--caps);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);flex:none;
+}
+.open-dot{display:inline-flex;align-items:center;gap:7px;font-family:var(--caps);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);flex:none}
+.open-dot::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.open-dot.shut{color:var(--muted)}
 
 /* ---------- footer ---------- */
-.foot{padding:26px var(--pad) 40px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.foot{padding:26px var(--pad) 42px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .chip{
-  font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-soft);border:1px solid var(--line);border-radius:var(--r);padding:5px 9px;
+  font-family:var(--caps);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line);border-radius:var(--r);padding:6px 10px;
 }
 .lang{display:flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .lang button{
-  background:none;border:0;padding:6px 11px;cursor:pointer;color:var(--ink-soft);
-  font-family:Archivo,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  background:none;border:0;padding:7px 12px;cursor:pointer;color:var(--muted);
+  font-family:var(--caps);font-size:11px;letter-spacing:.14em;
 }
-.lang button[aria-pressed="true"]{background:var(--amber);color:var(--amber-ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
 
 /* ---------- menu sheet ---------- */
 .sheet{
@@ -195,61 +185,64 @@ a{color:inherit}
   visibility:hidden;
 }
 .sheet.on{transform:translateY(0);visibility:visible}
-.sheet-top{
-  flex:none;padding:calc(env(safe-area-inset-top) + 16px) var(--pad) 0;
-  background:var(--ground);border-bottom:1px solid var(--line);
-}
-.sheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.sheet-head h2{font-size:clamp(1.7rem,7vw,2.1rem)}
+.sheet-top{flex:none;padding:calc(env(safe-area-inset-top) + 18px) var(--pad) 0;border-bottom:1px solid var(--line)}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sheet-head h2{font-size:clamp(1.6rem,6.5vw,2rem)}
 .x{
   background:none;border:1px solid var(--line);border-radius:var(--r);
-  color:var(--ink);width:38px;height:38px;flex:none;cursor:pointer;font-size:1.1rem;line-height:1;
+  color:var(--ink);width:40px;height:40px;flex:none;cursor:pointer;font-size:1rem;line-height:1;
 }
-.x:hover{border-color:var(--amber);color:var(--amber)}
-.tabs{display:flex;gap:22px;overflow-x:auto;margin-top:16px;scrollbar-width:none}
+.x:hover{border-color:var(--accent-soft);color:var(--accent)}
+.tabs{display:flex;gap:20px;overflow-x:auto;margin-top:18px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{
-  flex:none;background:none;border:0;padding:0 0 12px;cursor:pointer;
-  font-family:Archivo,sans-serif;font-size:.74rem;font-weight:700;
-  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);
-  border-bottom:2px solid transparent;
+  flex:none;background:none;border:0;padding:0 0 13px;cursor:pointer;
+  font-family:var(--caps);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid transparent;white-space:nowrap;
 }
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--amber)}
-.sheet-body{flex:1;overflow-y:auto;padding:var(--band) var(--pad) 60px;-webkit-overflow-scrolling:touch}
-.sheet-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:34px}
-.cat{display:flex;flex-direction:column;gap:4px;scroll-margin-top:140px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent-soft)}
+.sheet-body{flex:1;overflow-y:auto;padding:var(--band) var(--pad) 64px;-webkit-overflow-scrolling:touch}
+.sheet-inner{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.cat{display:flex;flex-direction:column;scroll-margin-top:150px}
 .cat h3{
-  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  font-family:Archivo,sans-serif;color:var(--amber);
-  padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--line);
+  font-family:var(--caps);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);padding-bottom:11px;margin-bottom:6px;border-bottom:1px solid var(--line);
 }
-/* classic menu setting: name — dotted leader — price */
-.item{display:flex;align-items:baseline;gap:8px;padding:9px 0}
-.item-n{font-weight:500;flex:none;max-width:74%}
-.item-note{display:block;font-size:.8rem;font-weight:400;color:var(--ink-soft);margin-top:2px}
+.item{display:flex;align-items:baseline;gap:9px;padding:11px 0}
+.item-n{flex:none;max-width:73%;line-height:1.4}
+.item-note{display:block;font-size:.82rem;color:var(--muted);margin-top:3px;line-height:1.45}
 .leader{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:10px}
-.item-p{flex:none;font-variant-numeric:tabular-nums;font-weight:600;color:var(--amber)}
-.menu-foot{font-size:.78rem;text-align:center;padding-top:8px}
+.item.described .leader{border-bottom:0}
+.item-p{flex:none;font-variant-numeric:tabular-nums;font-weight:500;color:var(--accent)}
+/* the upsell strip — brand sand, so it reads as a card not a warning */
+.cat-note{
+  margin-top:14px;padding:14px 16px;background:var(--sand);border-radius:var(--r);
+  font-size:.84rem;color:var(--ink);line-height:1.5;
+}
+.cat-note b{font-family:var(--caps);font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:10.5px;display:block;margin-bottom:5px;color:var(--muted)}
+.menu-foot{
+  font-family:var(--caps);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  text-align:center;padding-top:10px;color:var(--muted);line-height:2;
+}
 
-/* ---------- toast ---------- */
 .toast{
-  position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);z-index:80;
-  background:var(--ink);color:var(--ground);padding:12px 20px;border-radius:var(--r);
-  font-size:.85rem;font-weight:600;opacity:0;pointer-events:none;transition:.2s ease;
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);z-index:80;
+  background:var(--ink);color:var(--ground);padding:13px 22px;border-radius:var(--r);
+  font-size:.86rem;opacity:0;pointer-events:none;transition:.2s ease;
 }
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* ---------- the pour: one orchestrated load sequence ---------- */
-@keyframes pour{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.rule{animation:pour .62s cubic-bezier(.4,0,.15,1) both}
-.band{animation:rise .5s ease both}
+/* ---------- load sequence: the rule draws out from the centre ---------- */
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rule{animation:draw .7s cubic-bezier(.4,0,.15,1) .15s both}
+.band{animation:rise .55s ease both}
 .band:nth-child(1){animation-delay:.04s}
-.band:nth-child(2){animation-delay:.14s}
-.band:nth-child(3){animation-delay:.20s}
-.band:nth-child(4){animation-delay:.26s}
-.band:nth-child(5){animation-delay:.32s}
-.foot{animation:rise .5s ease .38s both}
+.band:nth-child(2){animation-delay:.16s}
+.band:nth-child(3){animation-delay:.22s}
+.band:nth-child(4){animation-delay:.28s}
+.band:nth-child(5){animation-delay:.34s}
+.foot{animation:rise .55s ease .40s both}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
 }
@@ -258,29 +251,21 @@ a{color:inherit}
 <body>
 
 <div class="wrap">
-
-  <!-- ================= HERO ================= -->
   <header class="band hero">
     <div class="topbar">
-      <svg class="seal" viewBox="0 0 44 44" aria-hidden="true" fill="none">
-        <circle cx="22" cy="22" r="20.5" stroke="currentColor" stroke-width="1.4"/>
-        <circle cx="22" cy="22" r="16.5" stroke="currentColor" stroke-width=".6" opacity=".5"/>
-        <path d="M17 30.5V13.5h6.4c3.5 0 5.6 2 5.6 5.1s-2.1 5.2-5.6 5.2H20.4v6.7z"
-              fill="currentColor"/>
-      </svg>
       <div class="lang" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
-
-    <h1 class="wordmark">Praline</h1>
+    <!-- Replace this lockup with the exported logo SVG when available -->
+    <h1 class="wordmark">PRALINÉ</h1>
+    <div class="lockup-sub">coffee house</div>
     <div class="rule"></div>
-    <p class="sub">Coffee House</p>
     <p class="place" data-t="place"></p>
+    <p class="craft" data-t="craft"></p>
   </header>
 
-  <!-- ================= PRIMARY ACTIONS ================= -->
   <section class="band">
     <p class="eyebrow" data-t="k_start"></p>
     <a class="btn btn-primary" id="openMenu" href="#menu" role="button">
@@ -293,7 +278,6 @@ a{color:inherit}
     </a>
   </section>
 
-  <!-- ================= REVIEW ================= -->
   <section class="band review">
     <div class="stars" aria-hidden="true"></div>
     <h2 data-t="rev_h"></h2>
@@ -304,13 +288,11 @@ a{color:inherit}
     </a>
   </section>
 
-  <!-- ================= SOCIAL ================= -->
   <section class="band">
     <p class="eyebrow" data-t="k_follow"></p>
     <div class="tiles" id="tiles"></div>
   </section>
 
-  <!-- ================= PRACTICAL ================= -->
   <section class="band">
     <p class="eyebrow" data-t="k_visit"></p>
     <div class="rows" id="rows"></div>
@@ -322,7 +304,6 @@ a{color:inherit}
   </footer>
 </div>
 
-<!-- ================= MENU SHEET ================= -->
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
   <div class="sheet-top">
     <div class="sheet-inner">
@@ -341,235 +322,291 @@ a{color:inherit}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-/* ================================================================
+/* ==================================================================
    ⬇⬇⬇  EDIT EVERYTHING IN THIS BLOCK — NOTHING ELSE.  ⬇⬇⬇
-   Every value marked ‹REEMPLAZAR› is a placeholder I could not
-   verify. See docs/CONTENT-CHECKLIST.md for how to get each one.
-   ================================================================ */
+   Menu transcribed from PRALINÉ COFFEE HOUSE MENÚ.pdf.
+   Values marked ‹REEMPLAZAR› are still outstanding.
+   ================================================================== */
 const CONFIG = {
-
-  /* --- Links -------------------------------------------------- */
-  instagram : "https://instagram.com/pralinecoffeehouse",
-  tiktok    : "https://tiktok.com/@pralinecoffeehouse",   // ‹REEMPLAZAR o borrar›
-  facebook  : "https://facebook.com/pralinecoffeehouse",  // ‹REEMPLAZAR o borrar›
-
-  // Deep link that opens the "write a review" box directly.
-  // Swap PLACE_ID for the café's Google Place ID.
+  instagram : "https://www.instagram.com/pralinecoffeehouse/",
+  tiktok    : "",                                          // ‹añadir o dejar vacío›
+  facebook  : "",                                          // ‹añadir o dejar vacío›
   review    : "https://search.google.com/local/writereview?placeid=PLACE_ID", // ‹REEMPLAZAR›
+  maps      : "https://maps.app.goo.gl/ipt32ousRqnob5X5A",
+  city      : "Baños de Agua Santa · Ecuador",  // el manual de marca dice Ambato — ‹CONFIRMAR›
+  whatsapp  : "593999999999",                              // ‹REEMPLAZAR›
+  address   : "‹REEMPLAZAR›",
+  wifi      : "",                                          // "" oculta la fila
+  hours: { 1:["08:00","21:00"],2:["08:00","21:00"],3:["08:00","21:00"],
+           4:["08:00","21:00"],5:["08:00","22:00"],6:["08:00","22:00"],0:["09:00","20:00"] },
+  hoursLabel:{ es:"‹REEMPLAZAR› Lun–Jue 8:00–21:00 · Vie–Sáb 8:00–22:00 · Dom 9:00–20:00",
+               en:"‹REEMPLAZAR› Mon–Thu 8am–9pm · Fri–Sat 8am–10pm · Sun 9am–8pm" },
 
-  maps      : "https://maps.google.com/?q=Praline+Coffee+House+Ba%C3%B1os+de+Agua+Santa", // ‹VERIFICAR›
-
-  /* --- Contact ------------------------------------------------- */
-  whatsapp  : "593999999999",          // ‹REEMPLAZAR› country code + number, digits only
-  address   : "Calle ‹REEMPLAZAR›, Baños de Agua Santa",
-  wifi      : "‹REEMPLAZAR›",          // wifi password, or set to "" to hide the row
-
-  /* --- Hours (24h, America/Guayaquil). null = closed ----------- */
-  hours: {
-    1:["08:00","21:00"], 2:["08:00","21:00"], 3:["08:00","21:00"],
-    4:["08:00","21:00"], 5:["08:00","22:00"], 6:["08:00","22:00"], 0:["09:00","20:00"]
-  },
-  hoursLabel: { es:"Lun–Jue 8:00–21:00 · Vie–Sáb 8:00–22:00 · Dom 9:00–20:00",
-                en:"Mon–Thu 8am–9pm · Fri–Sat 8am–10pm · Sun 9am–8pm" }, // ‹VERIFICAR›
-
-  /* --- Menu ---------------------------------------------------
-     PLACEHOLDER menu, structured and priced the way a specialty
-     café in Ecuador would be (USD — Ecuador's currency). Replace
-     the items; keep the shape. { es, en, p:price, n:optional note }
-     ------------------------------------------------------------ */
   menu: [
-    { es:"Café de especialidad", en:"Specialty coffee", items:[
-      { es:"Espresso",            en:"Espresso",           p:"1.50" },
-      { es:"Cortado",             en:"Cortado",            p:"1.90" },
-      { es:"Cappuccino",          en:"Cappuccino",         p:"2.50" },
-      { es:"Latte",               en:"Latte",              p:"2.75" },
-      { es:"Latte de praliné",    en:"Praline latte",      p:"3.50", n:{es:"Avellana caramelizada — la casa",en:"Caramelised hazelnut — the house cup"} },
-      { es:"Mocha",               en:"Mocha",              p:"3.25" },
-      { es:"V60 / Chemex",        en:"V60 / Chemex",       p:"3.75", n:{es:"Grano de origen ecuatoriano",en:"Single-origin Ecuadorian beans"} }
-    ]},
-    { es:"Fríos", en:"Cold", items:[
-      { es:"Cold brew",           en:"Cold brew",          p:"3.25" },
-      { es:"Iced latte",          en:"Iced latte",         p:"3.00" },
-      { es:"Frappé de praliné",   en:"Praline frappé",     p:"4.00" },
-      { es:"Limonada de hierbabuena", en:"Mint lemonade",  p:"2.50" },
-      { es:"Jugo natural del día", en:"Fresh juice of the day", p:"2.75" }
-    ]},
-    { es:"Sin café", en:"No coffee", items:[
-      { es:"Chocolate caliente",  en:"Hot chocolate",      p:"3.00", n:{es:"Cacao fino de aroma",en:"Ecuadorian fine-aroma cacao"} },
-      { es:"Matcha latte",        en:"Matcha latte",       p:"3.75" },
-      { es:"Infusión de hierbas", en:"Herbal infusion",    p:"2.00" }
-    ]},
-    { es:"Pastelería", en:"Pastry", items:[
-      { es:"Croissant de mantequilla", en:"Butter croissant", p:"2.25" },
-      { es:"Cheesecake de maracuyá",   en:"Passionfruit cheesecake", p:"3.75" },
-      { es:"Brownie de praliné",       en:"Praline brownie",  p:"3.25" },
-      { es:"Torta del día",            en:"Cake of the day",  p:"3.50" }
-    ]},
-    { es:"Para comer", en:"Food", items:[
-      { es:"Tostada de aguacate", en:"Avocado toast",      p:"5.50" },
-      { es:"Sándwich de pollo",   en:"Chicken sandwich",   p:"6.00" },
-      { es:"Bowl de frutas y granola", en:"Fruit & granola bowl", p:"4.75" },
-      { es:"Desayuno Praline",    en:"Praline breakfast",  p:"7.50", n:{es:"Café + jugo + tostadas + huevos",en:"Coffee + juice + toast + eggs"} }
-    ]}
+  { es:"Desayunos", en:"Breakfast", items:[
+    { es:"Desayuno Praliné", en:"Praliné breakfast", p:"7.50",
+      n:{es:"Huevos revueltos, jamón de pavo, tocino, French toast con frutos rojos o tostada mixta, bebida caliente y jugo de fruta",
+         en:"Scrambled eggs, turkey ham, bacon, French toast with berries or mixed toast, a hot drink and fruit juice"}},
+    { es:"Desayuno Cazuela", en:"Cazuela breakfast", p:"7.50",
+      n:{es:"Huevos a la cazuela con pasta de tomate y especias, mozzarella y cebollín, con pan campesino de masa madre, frutas de temporada y bebida caliente",
+         en:"Baked eggs with tomato and spices, mozzarella and chives, sourdough country bread, seasonal fruit and a hot drink"}},
+    { es:"Bowl de frutas", en:"Fruit bowl", p:"6.00",
+      n:{es:"Yogurt griego cremoso con frutas frescas, granola crujiente y miel, acompañado de un café americano",
+         en:"Creamy Greek yoghurt with fresh fruit, crunchy granola and honey, with an americano"}}
+  ]},
+  { es:"French toast · dulces", en:"French toast · sweet", items:[
+    { es:"Praliné", en:"Praliné", p:"7.50",
+      n:{es:"Brioche de masa madre con manzana, caramelo salado, praliné de nueces y crema especial de la casa",
+         en:"Sourdough brioche with apple, salted caramel, walnut praline and the house cream"}},
+    { es:"Nutella", en:"Nutella", p:"7.50",
+      n:{es:"Brioche de masa madre con nutella, fresas o banano y helado de vainilla",
+         en:"Sourdough brioche with Nutella, strawberries or banana and vanilla ice cream"}},
+    { es:"Frutos rojos", en:"Berries", p:"7.50",
+      n:{es:"Brioche de masa madre con mermelada de frutos rojos, fresas, arándanos y crema especial de la casa",
+         en:"Sourdough brioche with berry jam, strawberries, blueberries and the house cream"}}
+  ]},
+  { es:"French toast · saladas", en:"French toast · savoury", items:[
+    { es:"Croque Madame", en:"Croque Madame", p:"7.75",
+      n:{es:"Nuestro clásico francés. Brioche tostado, pernil ahumado y queso fundido, coronado con un huevo frito perfecto",
+         en:"Our French classic. Toasted brioche, smoked ham and melted cheese, crowned with a perfect fried egg"}},
+    { es:"Campesina", en:"Campesina", p:"7.75",
+      n:{es:"Brioche tostado con tocino crocante, huevos pochados y nuestra cremosa salsa de aguacate",
+         en:"Toasted brioche with crisp bacon, poached eggs and our creamy avocado sauce"}},
+    { es:"Burrata", en:"Burrata", p:"8.00",
+      n:{es:"Burrata cremosa sobre brioche tostado, con jamón serrano, rúcula, aceite de oliva y vinagre de vino tinto",
+         en:"Creamy burrata on toasted brioche, with serrano ham, rocket, olive oil and red wine vinegar"}},
+    { es:"Avo toast", en:"Avo toast", p:"6.00",
+      n:{es:"Brioche con aguacate fresco, queso crema, tomates cherry y huevo revuelto con un toque de sal y especias",
+         en:"Brioche with fresh avocado, cream cheese, cherry tomatoes and scrambled egg with salt and spices"}}
+  ]},
+  { es:"Para picar", en:"To share", items:[
+    { es:"Cocotte Pomodoro", en:"Cocotte Pomodoro", p:"7.00",
+      n:{es:"Cazuela de huevos con salsa pomodoro, jamón de pavo, mozzarella y especias, con pan hogaza de masa madre",
+         en:"Baked eggs in pomodoro sauce with turkey ham, mozzarella and spices, with a sourdough loaf"}},
+    { es:"Empanada de pollo", en:"Chicken empanada", p:"3.50" },
+    { es:"Humita",            en:"Humita",            p:"2.50" },
+    { es:"Papas fritas",      en:"Fries",             p:"4.00" },
+    { es:"Tostada de queso",  en:"Cheese toast",      p:"3.50" },
+    { es:"Tostada de queso y jamón de pavo", en:"Cheese & turkey ham toast", p:"3.75" },
+    { es:"Pan de masa madre", en:"Sourdough bread",   p:"3.50",
+      n:{es:"Con mermelada casera y mantequilla", en:"With house jam and butter"}},
+    { es:"Porción de huevos", en:"Side of eggs",      p:"2.50" }
+  ]},
+  { es:"Dulces", en:"Sweets", items:[
+    { es:"Galleta especial", en:"Special cookie", p:"2.25",
+      n:{es:"Rellena de chocolate semiamargo, pretzels, nutella y kinder",
+         en:"Filled with dark chocolate, pretzels, Nutella and Kinder"}},
+    { es:"Galleta de nuez",  en:"Walnut cookie",   p:"2.00" },
+    { es:"Triple chocolate", en:"Triple chocolate",p:"2.25" },
+    { es:"Cheesecake",       en:"Cheesecake",      p:"4.00",
+      n:{es:"Con mermelada de frutos rojos y arándanos frescos",
+         en:"With berry jam and fresh blueberries"}},
+    { es:"Affogato",         en:"Affogato",        p:"4.00" },
+    { es:"Tiramisú",         en:"Tiramisù",        p:"4.00" },
+    { es:"Postre de alfajor",en:"Alfajor dessert", p:"4.00",
+      n:{es:"Cremoso de dulce de leche, alfajor, nueces y chocolate",
+         en:"Dulce de leche cream, alfajor, walnuts and chocolate"}},
+    { es:"Muffins",          en:"Muffins",         p:"2.75" },
+    { es:"Rollos de canela", en:"Cinnamon rolls",  p:"3.00" },
+    { es:"Pan de banana",    en:"Banana bread",    p:"3.00" }
+  ], note:{ es:["Añade helado","Acompaña tu galleta o postre con helado de vainilla por $0.75"],
+            en:["Add ice cream","Add vanilla ice cream to any cookie or dessert for $0.75"] }},
+  { es:"Café caliente", en:"Hot coffee", items:[
+    { es:"Espresso simple",  en:"Single espresso",   p:"2.00" },
+    { es:"Espresso doble",   en:"Double espresso",   p:"2.50" },
+    { es:"Café bombón",      en:"Café bombón",       p:"2.50" },
+    { es:"Macchiato",        en:"Macchiato",         p:"2.25" },
+    { es:"Cortado",          en:"Cortado",           p:"2.30" },
+    { es:"Flat white",       en:"Flat white",        p:"3.00" },
+    { es:"Latte",            en:"Latte",             p:"3.00" },
+    { es:"Americano simple", en:"Single americano",  p:"2.25" },
+    { es:"Americano doble",  en:"Double americano",  p:"2.75" },
+    { es:"Capuccino simple", en:"Single cappuccino", p:"2.50" },
+    { es:"Capuccino doble",  en:"Double cappuccino", p:"3.25" },
+    { es:"Mocaccino",        en:"Mocaccino",         p:"3.50" }
+  ], note:{ es:["Dale un sabor especial · $0.75","Pistachio · French vainilla · Macadamia · Avellana · Rosas · Toffee sal marina"],
+            en:["Add a flavour · $0.75","Pistachio · French vanilla · Macadamia · Hazelnut · Rose · Sea-salt toffee"] }},
+  { es:"Café frío", en:"Iced coffee", items:[
+    { es:"Iced latte",        en:"Iced latte",        p:"3.50" },
+    { es:"Caramel macchiato", en:"Caramel macchiato", p:"3.75" },
+    { es:"Iced capuccino",    en:"Iced cappuccino",   p:"3.75" },
+    { es:"Limonada de café",  en:"Coffee lemonade",   p:"3.75" },
+    { es:"Cold brew",         en:"Cold brew",         p:"3.50" },
+    { es:"Moca frío",         en:"Iced mocha",        p:"3.75" },
+    { es:"Citrus cold brew",  en:"Citrus cold brew",  p:"4.00" }
+  ], note:{ es:["Dale un sabor especial · $0.75","Pistachio · French vainilla · Macadamia · Avellana · Rosas · Toffee sal marina"],
+            en:["Add a flavour · $0.75","Pistachio · French vanilla · Macadamia · Hazelnut · Rose · Sea-salt toffee"] }},
+  { es:"Especiales", en:"Signature", items:[
+    { es:"Iced latte de rosas",    en:"Rose iced latte",       p:"4.50" },
+    { es:"Iced latte Oreo",        en:"Oreo iced latte",       p:"4.90" },
+    { es:"Latte Nesquik",          en:"Nesquik latte",         p:"4.50" },
+    { es:"Capuccino de pistachio", en:"Pistachio cappuccino",  p:"3.50" },
+    { es:"Café Viennois",          en:"Café Viennois",         p:"3.00" }
+  ]},
+  { es:"Sin café", en:"No coffee", items:[
+    { es:"Matcha latte",       en:"Matcha latte",      p:"4.00" },
+    { es:"Strawberry matcha",  en:"Strawberry matcha", p:"4.90" },
+    { es:"Coconut matcha",     en:"Coconut matcha",    p:"4.50" },
+    { es:"Chai latte",         en:"Chai latte",        p:"3.50" },
+    { es:"Chocolate al 70%",   en:"70% hot chocolate", p:"3.00" },
+    { es:"Té de la casa",      en:"House tea",         p:"2.50" },
+    { es:"Jugos",              en:"Fresh juice",       p:"3.00" },
+    { es:"Batidos",            en:"Milkshakes",        p:"3.50" },
+    { es:"Agua de Jamaica",    en:"Hibiscus iced tea", p:"3.00" },
+    { es:"Limonada",           en:"Lemonade",          p:"3.00" },
+    { es:"Limonada de fresa",  en:"Strawberry lemonade",p:"3.50" }
+  ]},
+  { es:"Con alcohol", en:"With alcohol", items:[
+    { es:"Irish coffee",         en:"Irish coffee",      p:"6.50" },
+    { es:"Carajillo",            en:"Carajillo",         p:"6.50" },
+    { es:"Aperol",               en:"Aperol",            p:"6.50" },
+    { es:"Cerveza de capuccino", en:"Cappuccino beer",   p:"6.00" },
+    { es:"Tinto de verano",      en:"Tinto de verano",   p:"5.50" },
+    { es:"Copa de vino",         en:"Glass of wine",     p:"4.50" },
+    { es:"Club Verde",           en:"Club Verde beer",   p:"3.00" }
+  ], note:{ es:["De la casa","Pregunta por nuestra copa de vino y espumante de la casa"],
+            en:["House pours","Ask about our house wine and sparkling by the glass"] }}
   ]
 };
-/* ================================================================
-   ⬆⬆⬆  END OF EDITABLE BLOCK  ⬆⬆⬆
-   ================================================================ */
+/* ⬆⬆⬆  END OF EDITABLE BLOCK  ⬆⬆⬆ */
+</script>
 
+<script>
 const T = {
   es:{
-    place:"Baños de Agua Santa · Ecuador",
+    craft:"Los días empiezan y terminan en Praliné.",
     k_start:"Empieza aquí", k_follow:"Síguenos", k_visit:"Visítanos",
-    cta_menu:"Ver la carta", cta_menu_sub:"Café, pastelería y desayunos",
-    cta_wa:"Escríbenos por WhatsApp", cta_wa_sub:"Pedidos, reservas y consultas",
-    rev_h:"¿Te gustó tu café?", 
-    rev_p:"Somos una cafetería pequeña en Baños. Una reseña tuya en Google ayuda a que otros viajeros nos encuentren — toma 20 segundos.",
+    cta_menu:"Ver la carta", cta_menu_sub:"Desayunos, café y postres",
+    cta_wa:"Escríbenos por WhatsApp", cta_wa_sub:"Pedidos, reservas y para llevar",
+    rev_h:"¿Te llevas un buen recuerdo?",
+    rev_p:"Somos un proyecto pequeño y cada reseña cuenta. Si te gustó, cuéntalo en Google — son 20 segundos y nos ayuda muchísimo.",
     rev_cta:"Dejar una reseña", rev_cta_sub:"Se abre directo en Google",
-    menu_h:"La carta", menu_note:"Precios en USD. Consulta el especial del día en barra.",
-    r_hours:"Horario", r_addr:"Dirección", r_wifi:"Wi-Fi",
+    menu_h:"La carta", menu_note:"Todos nuestros precios incluyen IVA",
+    r_hours:"Horario", r_addr:"Dónde estamos", r_wifi:"Wi-Fi",
     a_maps:"Cómo llegar", a_copy:"Copiar", copied:"Contraseña copiada",
     open:"Abierto ahora", shut:"Cerrado ahora",
-    foot:"Hecho con cariño en Baños", table:"Mesa",
-    wa_msg:"¡Hola Praline! Estoy en la mesa {t} 👋",
-    wa_msg_plain:"¡Hola Praline! Quisiera hacer una consulta 👋"
+    foot:"Repostería artesanal", table:"Mesa",
+    wa_msg:"¡Hola Praliné! Estoy en la mesa {t} 👋",
+    wa_msg_plain:"¡Hola Praliné! Quisiera hacer un pedido 👋"
   },
   en:{
-    place:"Baños de Agua Santa · Ecuador",
+    craft:"Days begin and end at Praliné.",
     k_start:"Start here", k_follow:"Follow us", k_visit:"Find us",
-    cta_menu:"See the menu", cta_menu_sub:"Coffee, pastry and breakfast",
-    cta_wa:"Message us on WhatsApp", cta_wa_sub:"Orders, bookings and questions",
-    rev_h:"Enjoyed your coffee?",
-    rev_p:"We're a small café in Baños. A Google review helps other travellers find us — it takes 20 seconds.",
+    cta_menu:"See the menu", cta_menu_sub:"Breakfast, coffee and desserts",
+    cta_wa:"Message us on WhatsApp", cta_wa_sub:"Orders, bookings and takeaway",
+    rev_h:"Taking a good memory with you?",
+    rev_p:"We're a small place and every review counts. If you enjoyed it, say so on Google — 20 seconds, and it helps us more than you'd think.",
     rev_cta:"Leave a review", rev_cta_sub:"Opens straight in Google",
-    menu_h:"The menu", menu_note:"Prices in USD. Ask the bar for today's special.",
-    r_hours:"Hours", r_addr:"Address", r_wifi:"Wi-Fi",
+    menu_h:"The menu", menu_note:"All prices include VAT",
+    r_hours:"Hours", r_addr:"Where we are", r_wifi:"Wi-Fi",
     a_maps:"Directions", a_copy:"Copy", copied:"Password copied",
     open:"Open now", shut:"Closed now",
-    foot:"Made with care in Baños", table:"Table",
-    wa_msg:"Hi Praline! I'm at table {t} 👋",
-    wa_msg_plain:"Hi Praline! I have a question 👋"
+    foot:"Artisan patisserie", table:"Table",
+    wa_msg:"Hi Praliné! I'm at table {t} 👋",
+    wa_msg_plain:"Hi Praliné! I'd like to order 👋"
   }
 };
 
 const $  = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
-
-/* Table number comes from the NFC tag: ...?t=07  */
 const TABLE = (new URLSearchParams(location.search).get("t")||"").replace(/[^0-9A-Za-z]/g,"").slice(0,4);
-
 let lang = "es";
 
-/* Analytics: no-ops until you add a provider. See docs/EXECUTION-PLAN.md */
 function track(name, props={}){
   const p = {...props, table:TABLE||"none", lang};
-  if (window.plausible)      window.plausible(name,{props:p});
-  if (window.gtag)           window.gtag("event",name,p);
-  if (window.dataLayer)      window.dataLayer.push({event:name,...p});
+  if (window.plausible) window.plausible(name,{props:p});
+  if (window.gtag)      window.gtag("event",name,p);
+  if (window.dataLayer) window.dataLayer.push({event:name,...p});
 }
 
-/* ---------- icons ---------- */
 const ICON = {
   instagram:'<path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c0 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2 0-1.8-.2-2.2-.4a3.8 3.8 0 0 1-1.4-.9 3.8 3.8 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c0-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.2a6.6 6.6 0 1 0 0 13.2 6.6 6.6 0 0 0 0-13.2Zm0 10.9a4.3 4.3 0 1 1 0-8.6 4.3 4.3 0 0 1 0 8.6Zm8.4-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0Z" fill="currentColor"/>',
   tiktok:'<path d="M16.6 5.8a4.9 4.9 0 0 1-1.2-3.2h-3.3v13.2a2.8 2.8 0 1 1-2-2.7V9.7a6.1 6.1 0 1 0 5.3 6V9.1a8.2 8.2 0 0 0 4.7 1.5V7.3a4.9 4.9 0 0 1-3.5-1.5Z" fill="currentColor"/>',
   facebook:'<path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z" fill="currentColor"/>',
   star:'<path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor"/>',
-  clock:'<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M12 7v5.2l3.4 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/>',
-  pin:'<path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7" fill="none"/>',
-  wifi:'<path d="M2.5 8.5a15 15 0 0 1 19 0M5.5 12.2a10.5 10.5 0 0 1 13 0M8.6 15.9a6 6 0 0 1 6.8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/><circle cx="12" cy="19.4" r="1.4" fill="currentColor"/>'
+  clock:'<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 7v5.2l3.4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>',
+  pin:'<path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11Z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>',
+  wifi:'<path d="M2.5 8.5a15 15 0 0 1 19 0M5.5 12.2a10.5 10.5 0 0 1 13 0M8.6 15.9a6 6 0 0 1 6.8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="12" cy="19.4" r="1.3" fill="currentColor"/>'
 };
-const svg = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
+const svg = (k,cls="") => `<svg viewBox="0 0 24 24" aria-hidden="true"${cls?` class="${cls}"`:""}>${ICON[k]}</svg>`;
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 </script>
 
 <script>
-/* ---------- open / closed, always in café time -----------------
-   Tourists arrive with phones still set to their home timezone,
-   so never trust the device clock's zone. Pin to Guayaquil.      */
+/* Café time, not device time — visitors arrive on foreign clocks */
 function cafeNow(){
   const f = new Intl.DateTimeFormat("en-US",{timeZone:"America/Guayaquil",
     hour:"2-digit",minute:"2-digit",weekday:"short",hour12:false});
   const p = Object.fromEntries(f.formatToParts(new Date()).map(o=>[o.type,o.value]));
-  const day = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.weekday];
-  return { day, mins:(+p.hour%24)*60 + (+p.minute) };
+  return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.weekday],
+           mins:(+p.hour%24)*60 + (+p.minute) };
 }
 function isOpen(){
-  const {day,mins} = cafeNow();
-  const h = CONFIG.hours && CONFIG.hours[day];
+  const {day,mins} = cafeNow(), h = CONFIG.hours && CONFIG.hours[day];
   if(!h) return false;
   const m = s => (+s.split(":")[0])*60 + (+s.split(":")[1]);
   return mins >= m(h[0]) && mins < m(h[1]);
 }
 
-/* ---------- toast ---------- */
 let toastTimer;
 function toast(msg){
   const el = $("#toast"); el.textContent = msg; el.classList.add("on");
   clearTimeout(toastTimer); toastTimer = setTimeout(()=>el.classList.remove("on"),2000);
 }
 
-/* ---------- render everything for the active language ---------- */
 function render(){
   const t = T[lang];
   document.documentElement.lang = lang;
-  $$("[data-t]").forEach(el => { const k = el.dataset.t; if(t[k]) el.textContent = t[k]; });
+  $$("[data-t]").forEach(el => { if(t[el.dataset.t]) el.textContent = t[el.dataset.t]; });
   $$(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang===lang)));
-
+  $(".place").textContent = CONFIG.city;
   $(".stars").innerHTML = svg("star").repeat(5);
 
-  /* WhatsApp — the table number rides along, so staff know where you are */
   const msg = TABLE ? t.wa_msg.replace("{t}",TABLE) : t.wa_msg_plain;
-  $("#waLink").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  $("#waLink").href  = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
   $("#revLink").href = CONFIG.review;
 
-  /* Social tiles — only render the ones that are configured */
-  $("#tiles").innerHTML = ["instagram","tiktok","facebook"]
-    .filter(k => CONFIG[k])
-    .map(k => `<a class="tile" href="${CONFIG[k]}" target="_blank" rel="noopener" data-ev="social:${k}">
-                 ${svg(k)}<span>${k==="instagram"?"Instagram":k==="tiktok"?"TikTok":"Facebook"}</span></a>`)
+  $("#tiles").innerHTML = [["instagram","Instagram"],["tiktok","TikTok"],["facebook","Facebook"]]
+    .filter(([k]) => CONFIG[k])
+    .map(([k,label]) => `<a class="tile" href="${CONFIG[k]}" target="_blank" rel="noopener" data-ev="social:${k}">${svg(k)}<span>${label}</span></a>`)
     .join("");
 
-  /* Practical rows */
   const open = isOpen();
   let rows = `
     <div class="row" style="cursor:default">
-      ${svg("clock").replace("<svg","<svg class=\"row-ico\"")}
-      <span class="row-body">
-        <span class="row-k">${t.r_hours}</span>
-        <span class="row-v">${CONFIG.hoursLabel[lang]}</span>
-      </span>
+      ${svg("clock","row-ico")}
+      <span class="row-body"><span class="row-k">${t.r_hours}</span>
+        <span class="row-v">${esc(CONFIG.hoursLabel[lang])}</span></span>
       <span class="open-dot ${open?"":"shut"}">${open?t.open:t.shut}</span>
     </div>
     <a class="row" href="${CONFIG.maps}" target="_blank" rel="noopener" data-ev="maps">
-      ${svg("pin").replace("<svg","<svg class=\"row-ico\"")}
-      <span class="row-body">
-        <span class="row-k">${t.r_addr}</span>
-        <span class="row-v">${CONFIG.address}</span>
-      </span>
+      ${svg("pin","row-ico")}
+      <span class="row-body"><span class="row-k">${t.r_addr}</span>
+        <span class="row-v">${esc(CONFIG.address)}</span></span>
       <span class="row-act">${t.a_maps}</span>
     </a>`;
   if (CONFIG.wifi) rows += `
     <button class="row" type="button" id="wifiRow">
-      ${svg("wifi").replace("<svg","<svg class=\"row-ico\"")}
-      <span class="row-body">
-        <span class="row-k">${t.r_wifi}</span>
-        <span class="row-v mono">${CONFIG.wifi}</span>
-      </span>
+      ${svg("wifi","row-ico")}
+      <span class="row-body"><span class="row-k">${t.r_wifi}</span>
+        <span class="row-v mono">${esc(CONFIG.wifi)}</span></span>
       <span class="row-act">${t.a_copy}</span>
     </button>`;
   $("#rows").innerHTML = rows;
 
-  /* Menu */
   $("#tabs").innerHTML = CONFIG.menu.map((c,i)=>
-    `<button class="tab" role="tab" data-i="${i}" aria-selected="${i===0}">${c[lang]}</button>`).join("");
+    `<button class="tab" role="tab" data-i="${i}" aria-selected="${i===0}">${esc(c[lang])}</button>`).join("");
+
   $("#menuMount").innerHTML = CONFIG.menu.map((c,i)=>`
     <section class="cat" id="cat${i}">
-      <h3>${c[lang]}</h3>
+      <h3>${esc(c[lang])}</h3>
       ${c.items.map(it=>`
-        <div class="item">
-          <span class="item-n">${it[lang]}${it.n?`<span class="item-note">${it.n[lang]}</span>`:""}</span>
+        <div class="item${it.n?" described":""}">
+          <span class="item-n">${esc(it[lang])}${it.n?`<span class="item-note">${esc(it.n[lang])}</span>`:""}</span>
           <span class="leader"></span>
           <span class="item-p">$${it.p}</span>
         </div>`).join("")}
+      ${c.note?`<p class="cat-note"><b>${esc(c.note[lang][0])}</b>${esc(c.note[lang][1])}</p>`:""}
     </section>`).join("") + `<p class="menu-foot">${t.menu_note}</p>`;
 
   if (TABLE){
@@ -579,7 +616,6 @@ function render(){
   }
 }
 
-/* ---------- menu sheet ---------- */
 const sheet = $("#sheet");
 function openSheet(e){
   if(e) e.preventDefault();
@@ -601,7 +637,6 @@ $("#openMenu").addEventListener("click", openSheet);
 $("#closeMenu").addEventListener("click", closeSheet);
 document.addEventListener("keydown", e=>{ if(e.key==="Escape" && sheet.classList.contains("on")) closeSheet(); });
 
-/* Tabs scroll the sheet; scrolling the sheet updates the tabs */
 $("#tabs").addEventListener("click", e=>{
   const b = e.target.closest(".tab"); if(!b) return;
   $("#cat"+b.dataset.i).scrollIntoView({behavior:"smooth",block:"start"});
@@ -612,17 +647,16 @@ const spy = new IntersectionObserver(es=>{
     if(!en.isIntersecting) return;
     const i = en.target.id.replace("cat","");
     $$("#tabs .tab").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.i===i)));
+    const active = $(`#tabs .tab[data-i="${i}"]`);
+    if(active) active.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
   });
 },{root:$("#sheetBody"), rootMargin:"-45% 0px -50% 0px"});
 
-/* ---------- delegated interactions ---------- */
 document.addEventListener("click", async e=>{
-  const wifi = e.target.closest("#wifiRow");
-  if(wifi){
+  if(e.target.closest("#wifiRow")){
     try{ await navigator.clipboard.writeText(CONFIG.wifi); toast(T[lang].copied); }
     catch{ toast(CONFIG.wifi); }
-    track("wifi_copy");
-    return;
+    track("wifi_copy"); return;
   }
   const link = e.target.closest("[data-ev]");
   if(link) track(link.dataset.ev.split(":")[0], {target:link.dataset.ev});
@@ -630,7 +664,6 @@ document.addEventListener("click", async e=>{
 $("#revLink").addEventListener("click", ()=>track("review_click"));
 $("#waLink").addEventListener("click",  ()=>track("whatsapp_click"));
 
-/* ---------- language ---------- */
 function setLang(l, remember=true){
   lang = l;
   if(remember){ try{ localStorage.setItem("praline.lang", l); }catch{} }
@@ -642,15 +675,9 @@ $(".lang").addEventListener("click", e=>{
   setLang(b.dataset.lang); track("lang_switch",{to:b.dataset.lang});
 });
 
-/* Boot: remembered choice → device language → Spanish.
-   Baños runs on tourism, so an English speaker must never land on Spanish. */
-let start = "es";
-try{ start = localStorage.getItem("praline.lang") || start; }
-catch{}
-if(!(()=>{try{return localStorage.getItem("praline.lang")}catch{return null}})()){
-  start = (navigator.language||"es").toLowerCase().startsWith("es") ? "es" : "en";
-}
-setLang(start, false);
+let saved = null;
+try{ saved = localStorage.getItem("praline.lang"); }catch{}
+setLang(saved || ((navigator.language||"es").toLowerCase().startsWith("es") ? "es" : "en"), false);
 track("page_view");
 if(location.hash === "#menu") openSheet();
 </script>
